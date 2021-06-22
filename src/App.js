@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import AceEditorDiv from './AceEditor';
 import './App.css';
-// import Editor from './Editor';
 
 const App = () => {
   const [html, setHtml] = useState('');
@@ -17,10 +16,8 @@ const App = () => {
   };
   const handleTheme = () => {
     if (theme === 'solarized_light') {
-      // return setTheme('material');
       return setTheme('solarized_dark');
     } else {
-      // return setTheme('');
       return setTheme('solarized_light');
     }
   };
@@ -55,12 +52,6 @@ const App = () => {
       </div>
       <div className='editor-wrapper'>
         <div className='output-div'>
-          {/* <Editor
-            language='javascript'
-            theme={theme}
-            value={html}
-            onChange={setHtml}
-          /> */}
           <AceEditorDiv value={html} theme={theme} onChange={setHtml} />
         </div>
         <div className='output-div'>
