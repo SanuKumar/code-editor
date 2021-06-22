@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import AceEditorDiv from './AceEditor';
 import './App.css';
-import Editor from './Editor';
+// import Editor from './Editor';
 
 const App = () => {
   const [html, setHtml] = useState('');
   const [srcDoc, setSrcDoc] = useState('');
-  const [theme, setTheme] = useState('');
+  const [theme, setTheme] = useState('solarized_light');
 
   const handleCodeRun = () => {
     setSrcDoc(
@@ -15,10 +16,12 @@ const App = () => {
     );
   };
   const handleTheme = () => {
-    if (theme === '') {
-      return setTheme('material');
+    if (theme === 'solarized_light') {
+      // return setTheme('material');
+      return setTheme('solarized_dark');
     } else {
-      return setTheme('');
+      // return setTheme('');
+      return setTheme('solarized_light');
     }
   };
 
@@ -52,12 +55,13 @@ const App = () => {
       </div>
       <div className='editor-wrapper'>
         <div className='output-div'>
-          <Editor
+          {/* <Editor
             language='javascript'
             theme={theme}
             value={html}
             onChange={setHtml}
-          />
+          /> */}
+          <AceEditorDiv value={html} theme={theme} onChange={setHtml} />
         </div>
         <div className='output-div'>
           <iframe
