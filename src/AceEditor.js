@@ -1,6 +1,6 @@
 import React from 'react';
 import AceEditor from 'react-ace';
-
+import 'ace-builds/webpack-resolver'
 import 'ace-builds/src-noconflict/mode-java';
 import 'ace-builds/src-noconflict/theme-solarized_dark';
 import 'ace-builds/src-noconflict/theme-solarized_light';
